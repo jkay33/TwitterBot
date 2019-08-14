@@ -1,0 +1,16 @@
+{
+  "name": "sneakerbot",
+  "version": "1.0.0",
+  "description": "Sneaker twitter bot to tweet reminders",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JK",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.0",
+    "nodemon": "^1.19.1",
+    "twitter": "^1.7.1"
+  }
+}
