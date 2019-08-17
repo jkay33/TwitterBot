@@ -17,9 +17,12 @@ container = soup.find_all("div", {"class": "col-xs-6 col-sm-3 col-md-3 release-d
 records = []
 # for every instance of parent div, scrape the date and title and store in records
 for items in container:
-    date = items.find("div", attrs={"class": ["event-date first-event", "event-date"]}).text
+    olddate = items.find("div", attrs={"class": ["event-date first-event", "event-date"]}).text
+    # added line below because olddate returns 1Jan so this is to return 1 Jan
+    date = olddate[-3:] + " " + olddate[:-3]
     title = items.find("div", attrs={"class": "release-date-title"}).text
     records.append((date, title))
 
+# creating csv with header of date and title to put data
 df = pd.DataFrame(records, columns=['date', 'title'])
 df.to_csv('release.csv', index=False, encoding='utf-8')
