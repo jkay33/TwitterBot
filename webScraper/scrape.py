@@ -25,4 +25,4 @@ for items in container:
 
 # creating csv with header of date and title to put data
 df = pd.DataFrame(records, columns=['date', 'title'])
-df.to_csv('release.csv', index=False, encoding='utf-8')
+df.to_json('release.json')#, index=False, encoding='utf-8')
