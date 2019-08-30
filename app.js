@@ -1,8 +1,13 @@
 
-var twitter = require('twitter'),
+var twitter = require('twit'),
 cred = require('./config.js');
 const fs = require('fs');
 var T = twitter(cred);
+
+// function to find all key values on matching date
+function getKeyByValue(object, value){
+  return Object.keys(object).filter(key => object[key] === value);
+}
 
 // converting date to MMM DD format ex: Jan 1
 Date.prototype.toShortFormat = function(){
@@ -20,10 +25,6 @@ var formatted = date.toShortFormat();
 var dfile = fs.readFileSync('./webScraper/release.json');
 let data = JSON.parse(dfile);
 
-// function to find all key values on matching date
-function getKeyByValue(object, value){
-  return Object.keys(object).filter(key => object[key] === value);
-}
 // set 'keys' variable to list of keys with matching date to find title
 var keys = getKeyByValue(data.date, formatted);
 

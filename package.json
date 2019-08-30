@@ -9,8 +9,7 @@
   "author": "JK",
   "license": "ISC",
   "dependencies": {
-    "csv": "^5.1.2",
     "nodemon": "^1.19.1",
-    "twitter": "^1.7.1"
+    "twit": "^2.2.11"
   }
 }
