@@ -1,5 +1,5 @@
 
-var twitter = require('twit'),
+var twitter = require('twitter'),
 cred = require('./config.js');
 const fs = require('fs');
 var T = twitter(cred);

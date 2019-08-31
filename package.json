@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "nodemon": "^1.19.1",
-    "twit": "^2.2.11"
+    "twitter": "^1.7.1"
   }
 }
