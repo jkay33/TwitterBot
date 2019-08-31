@@ -1,8 +1,8 @@
 
-var twitter = require('twitter'),
-cred = require('./config.js');
+var twitter = require('twit');
+var cred = require('./config.js');
 const fs = require('fs');
-var T = twitter(cred);
+var T = new twitter(cred);
 
 // function to find all key values on matching date
 function getKeyByValue(object, value){
@@ -34,4 +34,10 @@ for (index in keys){
   tweet += data.title[keys[index]] + '\n';
 }
 
-console.log(tweet);
+T.post('statuses/update', {status: tweet}, function(error, tweet, response){
+  if (error){
+    console.log(error)
+  }
+  console.log(tweet);
+  console.log(response);
+})
